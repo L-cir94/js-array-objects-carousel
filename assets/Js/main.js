@@ -76,3 +76,33 @@ images.forEach((slide, index) => {
     const thumb_markup = `<img src="./assets/${slide.image}" alt="" class="${activeSlide}">`
     thumbs_dom_element.insertAdjacentHTML('beforeend', thumb_markup)
 })
+prev_dom_element.addEventListener('click', prev)
+/* funzioni */
+function prev() {
+    //per slide
+  if (active_slide === 0) {
+    active_slide = images.length - 1
+  } else {
+    active_slide--
+  }
+ 
+  const current_slide = document.querySelector('.slide.active')
+
+  current_slide.classList.remove('active')
+
+  const prev_slide = document.querySelectorAll('.slide')[active_slide]
+
+  prev_slide.classList.add('active')
+
+
+  //per thumbnail
+
+  const current_thumb = document.querySelector('.thumbs > img.active')
+
+  current_thumb.classList.remove('active')
+
+  const prev_thumb = document.querySelectorAll('.thumbs > img')[active_slide]
+  console.log(next_thumb);
+
+  prev_thumb.classList.add('active')
+}
