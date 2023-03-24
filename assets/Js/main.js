@@ -77,14 +77,15 @@ images.forEach((slide, index) => {
     thumbs_dom_element.insertAdjacentHTML('beforeend', thumb_markup)
 })
 prev_dom_element.addEventListener('click', prev)
+next_dom_element.addEventListener('click', next)
 /* funzioni */
 function prev() {
     //per slide
-  if (active_slide === 0) {
-    active_slide = images.length - 1
-  } else {
-    active_slide--
-  }
+    if (active_slide === images.length - 1) {
+        active_slide = 0
+      } else {
+        active_slide--
+      }
  
   const current_slide = document.querySelector('.slide.active')
 
@@ -102,7 +103,31 @@ function prev() {
   current_thumb.classList.remove('active')
 
   const prev_thumb = document.querySelectorAll('.thumbs > img')[active_slide]
-  console.log(next_thumb);
 
   prev_thumb.classList.add('active')
 }
+function next() {
+    //per slide
+    if (active_slide === images.length - 1) {
+      active_slide = 0
+    } else {
+      active_slide++
+    }
+    const current_slide = document.querySelector('.slide.active')
+
+    current_slide.classList.remove('active')
+
+    const next_slide = document.querySelectorAll('.slide')[active_slide]
+
+    next_slide.classList.add('active')
+
+
+    // per thumbnail
+    const current_thumb = document.querySelector('.thumbs > img.active')
+
+    current_thumb.classList.remove('active')
+
+    const next_thumb = document.querySelectorAll('.thumbs > img')[active_slide]
+
+    next_thumb.classList.add('active')
+  }

@@ -141,7 +141,7 @@ button.next:hover
 
 .thumbs img.active
 {
-	border: 4px rgb(181, 80, 80);
+	border: 4px inset black;
 }
 
 .thumbs img:not(.active)
