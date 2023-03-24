@@ -70,4 +70,9 @@ images.forEach((slide, index) => {
       </div>
     </div>
     `
+    slides_dom_element.insertAdjacentHTML('beforeend', slide_markup)
+
+//Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il thumbs.
+    const thumb_markup = `<img src="./assets/${slide.image}" alt="" class="${activeSlide}">`
+    thumbs_dom_element.insertAdjacentHTML('beforeend', thumb_markup)
 })
