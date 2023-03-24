@@ -10,7 +10,7 @@ Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del
 markup statico: costruiamo il container e inseriamo l'immagine grande in modo da 
 poter stilare lo slider.
 
-- Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare 
+done- Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare 
 dinamicamente il carosello.
 
 - Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
@@ -81,11 +81,10 @@ next_dom_element.addEventListener('click', next)
 /* funzioni */
 function prev() {
     //per slide
-    if (active_slide === images.length - 1) {
-        active_slide = 0
-      } else {
-        active_slide--
-      }
+    if (active_slide === 0 ) {
+      active_slide = images.length - 1
+    }else{ active_slide-- }
+      
  
   const current_slide = document.querySelector('.slide.active')
 
